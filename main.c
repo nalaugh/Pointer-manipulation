@@ -64,7 +64,8 @@ int main(int argc, char *argv[])
                     set[setnumb] = 0-(int)temp;
                     i++;
                 }
-                else {
+                else
+                {
                     set[setnumb] = lineRead[i]-'0';
                 }
                 setnumb++;
@@ -79,11 +80,11 @@ int main(int argc, char *argv[])
         }
         for (int i = 0; i< numbers;i++)
         {
-            *(*line+(totalnumber+i))= key[i];
+            *(*(line+lines)+i)= key[i];
         }
 
         totalnumber +=numbers;
-        printArray(key, numbers);//print the sorted line
+        printArray(*(line+lines), numbers);//print the sorted line
 
         lines++;
 
@@ -110,7 +111,7 @@ int main(int argc, char *argv[])
         printArray(*(line+*(shift+i)), *(final+i));//Print the final array
     }
     //freeing the memory
-free(line);
+    free(line);
     free(final);
     free(original);
     return 0;
